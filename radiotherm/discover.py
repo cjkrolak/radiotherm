@@ -5,6 +5,7 @@ IP_ADDRESS = '239.255.255.250'
 PORT = 1900
 MESSAGE = """TYPE: WM-DISCOVER\r\nVERSION: 1.0\r\n\r\nservices: com.marvell.wm.system*\r\n\r\n""".encode('utf-8')
 
+
 def discover_address():
     """
     The example discovery program provided by Radio Thermostat sets the IP packet's
@@ -39,6 +40,7 @@ def discover_address():
             raise IOError("Found %d thermostats and I don't know which to pick." % len(thermostats))
         return thermostats[0]
 
+
 class ExitingSocket(socket.socket):
     """
     This is a socket subclass that can be used with the "with" statement. It
@@ -46,6 +48,7 @@ class ExitingSocket(socket.socket):
     """
     def __enter__(self):
         return self
+
 
     def __exit__(self, *args, **kwargs):
         try:
