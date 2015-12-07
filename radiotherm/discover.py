@@ -37,8 +37,9 @@ def discover_address():
         if len(thermostats) == 0:
             raise IOError('No thermostats were found')
         if len(thermostats) > 1:
-            raise IOError("Found %d thermostats and I don't know which to pick." % len(thermostats))
-        return thermostats[0]
+            # raise IOError("Found %d thermostats and I don't know which to pick." % len(thermostats))
+            pass
+        return thermostats
 
 
 class ExitingSocket(socket.socket):
